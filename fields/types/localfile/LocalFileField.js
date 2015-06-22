@@ -104,6 +104,7 @@ module.exports = Field.create({
 			values = (
 				<div className='file-values'>
 					<div className='field-value'>{this.getFilename()}</div>
+					<div className='field-preview'>{this.renderImagePreview()}</div>
 				</div>
 			);
 		}
@@ -113,6 +114,12 @@ module.exports = Field.create({
 				{values}
 				{add}
 			</div>
+		);
+	},
+
+	renderImagePreview: function () {
+		return (
+			<img src={this.props.value.url} />
 		);
 	},
 
